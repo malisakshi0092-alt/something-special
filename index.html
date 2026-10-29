@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Rushi, My Yellow Person 💛</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --night: #171629;
+  --purple: #282342;
+  --yellow: #ffda75;
+  --cream: #fff7e9;
+  --pink: #ffb9cc;
+  --muted: #d0cde0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--night);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section { padding: 80px 20px; }
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(46px, 9vw, 82px);
+  line-height: 1.13;
+}
+
+h2 {
+  font-size: clamp(34px, 6vw, 49px);
+  line-height: 1.25;
+}
+
+.gold { color: var(--yellow); font-style: italic; }
+
+.eyebrow {
+  color: var(--yellow);
+  font-size: 10px;
+  letter-spacing: 4px;
+  line-height: 2;
+  margin-bottom: 22px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 22px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 5%, #55416d 0%, transparent 46%),
+    radial-gradient(ellipse at 0% 90%, #433054 0%, transparent 40%),
+    linear-gradient(150deg, #24203f, #171629 65%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero .intro {
+  color: var(--yellow);
+  letter-spacing: 3px;
+  font-size: 10px;
+  margin-bottom: 30px;
+}
+
+.hero h1 { margin-bottom: 24px; }
+
+.hero .subtitle {
+  color: #e0dbea;
+  font-size: 14px;
+  line-height: 2;
+  margin: 0 auto 28px;
+  max-width: 430px;
+}
+
+.btn {
+  padding: 14px 25px;
+  margin: 7px;
+  border: 1px solid var(--yellow);
+  border-radius: 40px;
+  background: var(--yellow);
+  color: #27203b;
+  font: 700 12px 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #ffda7530;
+}
+
+.btn-outline {
+  color: var(--yellow);
+  background: transparent;
+}
+
+.float-deco {
+  position: absolute;
+  pointer-events: none;
+  animation: bob 3s ease-in-out infinite;
+  opacity: .85;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.star {
+  position: absolute;
+  color: var(--yellow);
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .25; transform: scale(.8); }
+  to { opacity: 1; transform: scale(1.15); }
+}
+
+.hidden { display: none !important; }
+
+.countdown-section {
+  background: #201d36;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 35px 0 20px;
+}
+
+.time-box {
+  min-width: 78px;
+  padding: 18px 12px;
+  border: 1px solid #615171;
+  background: #2a2542;
+  border-radius: 15px;
+}
+
+.time-box strong {
+  display: block;
+  color: var(--yellow);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.time-box span {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.section-copy {
+  max-width: 560px;
+  margin: 22px auto 0;
+}
+
+.friendship {
+  background:
+    radial-gradient(ellipse at 50% 40%, #3b2c4e 0%, #171629 72%);
+}
+
+.friend-card {
+  max-width: 600px;
+  margin: 35px auto 0;
+  padding: 32px 25px;
+  border: 1px solid #5c4967;
+  background: #211d36cc;
+  border-radius: 23px;
+}
+
+.emoji-big { font-size: 42px; margin-bottom: 15px; }
+
+.friend-card h3 {
+  font-size: 27px;
+  color: var(--yellow);
+}
+
+.friend-card p {
+  margin-top: 17px;
+  color: #e0dbea;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.timeline {
+  background: #211d36;
+}
+
+.timeline-item {
+  max-width: 520px;
+  margin: 28px auto;
+  padding: 23px;
+  border-left: 2px solid var(--yellow);
+  background: #2a2542;
+  border-radius: 0 15px 15px 0;
+  text-align: left;
+}
+
+.timeline-item .tag {
+  color: var(--yellow);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.letter-section {
+  background:
+    radial-gradient(ellipse at top, #493555, transparent 70%),
+    #171629;
+}
+
+.envelope {
+  max-width: 600px;
+  margin: 32px auto 0;
+  padding: 32px 25px;
+  border: 1px solid #b99a64;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #302642, #201b34);
+  box-shadow: 0 15px 60px #00000022;
+}
+
+.envelope-icon {
+  font-size: 48px;
+  animation: bob 3s ease-in-out infinite;
+}
+
+.envelope h3 {
+  font-size: 28px;
+  margin: 16px 0 8px;
+}
+
+.letter {
+  display: none;
+  text-align: left;
+  margin-top: 27px;
+  padding-top: 25px;
+  border-top: 1px solid #66516d;
+  white-space: pre-line;
+  color: #f3eaf0;
+  font-size: 13px;
+  line-height: 2.15;
+  animation: appear .7s ease;
+}
+
+.letter.show { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.photo-section { background: #201d36; }
+
+.photo-frame {
+  position: relative;
+  width: min(100%, 350px);
+  min-height: 300px;
+  margin: 30px auto 18px;
+  border: 1px dashed #a58b70;
+  border-radius: 22px;
+  background: #2a2542;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-placeholder { padding: 25px; }
+
+.photo-placeholder .icon { font-size: 48px; }
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.photo-placeholder p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+.photo-controls input {
+  max-width: 240px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.final {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #40304f, #171629 72%);
+}
+
+.final h2 { margin-bottom: 22px; }
+
+.final-message {
+  margin-top: 30px;
+  animation: appear .8s ease;
+}
+
+footer {
+  padding: 25px 15px;
+  font-size: 11px;
+  line-height: 2;
+  color: #aaa3bf;
+  background: #121122;
+}
+
+.heart {
+  position: fixed;
+  z-index: 20;
+  bottom: -40px;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-115vh) rotate(40deg); opacity: 0; }
+}
+
+@media(max-width: 480px) {
+  section { padding: 65px 18px; }
+  .time-box { min-width: 66px; padding: 14px 8px; }
+  .time-box strong { font-size: 24px; }
+  .envelope, .friend-card { padding: 24px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero" id="home">
+  <span class="star" style="top:12%;left:12%">✦</span>
+  <span class="star" style="top:20%;right:13%;animation-delay:.7s">✧</span>
+  <span class="star" style="bottom:18%;left:17%;animation-delay:1s">✦</span>
+  <span class="star" style="bottom:24%;right:15%;animation-delay:.4s">✧</span>
+
+  <span class="float-deco" style="top:23%;left:8%;font-size:28px">🌼</span>
+  <span class="float-deco" style="top:30%;right:7%;font-size:27px;animation-delay:1s">💛</span>
+  <span class="float-deco" style="bottom:15%;right:9%;font-size:25px;animation-delay:.5s">🧸</span>
+
+  <div class="hero-content">
+    <p class="intro">A VERY IMPORTANT ANNOUNCEMENT ✨</p>
+
+    <h1>Hey, <span class="gold">Rushi!</span><br>My Yellow Person 💛</h1>
+
+    <p class="subtitle">
+      Guess what? Your favourite human has prepared
+      a tiny surprise for you. And yes, you're legally
+      required to smile while opening it. 😌
+    </p>
+
+    <button class="btn" onclick="openSurprise()">
+      Okay, Show Me! 🎁
+    </button>
+
+    <p class="muted" style="margin-top:20px;font-size:11px">
+      Warning: excessive cuteness ahead. 🫶🏻
+    </p>
+  </div>
+</header>
+
+<main id="surprise" class="hidden">
+
+  <section class="countdown-section">
+    <p class="eyebrow">31 OCTOBER · YOUR DAY</p>
+
+    <h2>Happiest Birthday,<br><span class="gold">Rushi! 🎂</span></h2>
+
+    <p class="section-copy muted">
+      Hello, Mr. 23! 🥳
+      Another year older, another year wiser...
+      or are we still working on that second part? 😂
+      Just kidding. Today, you get all the attention.
+    </p>
+
+    <div class="countdown">
+      <div class="time-box"><strong id="days">00</strong><span>DAYS</span></div>
+      <div class="time-box"><strong id="hours">00</strong><span>HOURS</span></div>
+      <div class="time-box"><strong id="mins">00</strong><span>MINUTES</span></div>
+      <div class="time-box"><strong id="secs">00</strong><span>SECONDS</span></div>
+    </div>
+
+    <p class="muted" id="countMessage"></p>
+  </section>
+
+  <section class="friendship">
+    <p class="eyebrow">A LITTLE FACT ABOUT US</p>
+    <h2>Almost 8 Years?<br><span class="gold">That's a Whole Era!</span></h2>
+
+    <div class="friend-card">
+      <div class="emoji-big">🧸💛🌼</div>
+      <h3>My Yellow Person</h3>
+
+      <p>
+        Almost eight years of knowing each other...
+        and somehow, the past several months have made
+        our friendship feel even more special.
+        <br><br>
+        It's funny how someone you've known for years
+        can slowly become someone you feel so much closer to.
+        No grand announcement, no big dramatic moment...
+        just little conversations, shared laughs, and a bond
+        that quietly grows.
+        <br><br>
+        And now look at us. You have officially earned
+        your own birthday website. Please act surprised. 😂
+      </p>
+    </div>
+  </section>
+
+  <section class="timeline">
+    <p class="eyebrow">OUR LITTLE STORY</p>
+    <h2>Then & Now. <span class="gold">🫶🏻</span></h2>
+
+    <div class="timeline-item">
+      <span class="tag">CHAPTER 01 · ALMOST 8 YEARS AGO</span>
+      <h3>When It All Started 🌱</h3>
+      <p>
+        We started out as two people who knew each other.
+        Who knew that years later, you'd become such a
+        special part of my life?
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tag">CHAPTER 02 · THE RECENT MONTHS</span>
+      <h3>A Little Closer, Every Day 💛</h3>
+      <p>
+        Somewhere along the way, our friendship grew
+        closer. More conversations, more comfort, and
+        a connection that means more than I can explain
+        in a few lines.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tag">CHAPTER 03 · YOUR 23RD YEAR</span>
+      <h3>More Memories To Come ✨</h3>
+      <p>
+        Here's to more laughter, random talks, silly jokes,
+        unforgettable moments, and a friendship that
+        keeps giving us reasons to smile.
+      </p>
+    </div>
+  </section>
+
+  <section class="letter-section">
+    <p class="eyebrow">YOUR ACTUAL BIRTHDAY GIFT 💌</p>
+
+    <h2>A Little Letter<br><span class="gold">From My Heart.</span></h2>
+
+    <p class="section-copy muted">
+      No expensive wrapping. No complicated gift.
+      Just a few things I really want you to know.
+    </p>
+
+    <div class="envelope">
+      <div class="envelope-icon">💌</div>
+
+      <h3>For My Yellow Person</h3>
+
+      <p class="muted">
+        Open when you're ready to feel a little special.
+      </p>
+
+      <button class="btn" id="letterBtn" onclick="toggleLetter()">
+        Open Your Letter 💛
+      </button>
+
+      <div class="letter" id="letter">Dear Rushi,
+
+HAPPIEST 23RD BIRTHDAY, YOU! 💛🎂
+
+First of all, I hope you know that today is your
+official permission to
+be extra dramatic, make terrible jokes, and demand
+birthday treats from everyone. 😂
+
+But jokes apart, there's something I really want
+to tell you.
+
+We've known each other for almost eight years.
+That's such a long time when you actually think
+about it. So many days have passed, so many things
+have changed, and we've both grown in our own ways.
+
+And yet, these past several months have made me
+realise how special it is that we've become so much
+closer.
+
+Sometimes a friendship doesn't need one big moment
+to become important. It's the little things. The
+conversations that go on longer than expected,
+the random check-ins, the comfort of talking, and
+the happiness of having someone who feels familiar
+but somehow even more special with time.
+
+I'm really glad that our friendship has grown this way.
+
+You might be my Yellow Person, but honestly, I hope
+you know that you bring your own kind of sunshine
+into the lives of people around you. ☀️
+
+For your 23rd year, I wish you all the happiness
+you deserve. I hope your hard work pays off, your
+dreams get closer, and life surprises you in the
+best possible ways.
+
+I hope you learn to be proud of yourself, even for
+the little things. I hope you never feel like you
+have to figure everything out at once. And when
+life gets confusing, I hope you remember that you
+are capable of more than you sometimes give yourself
+credit for.
+
+And selfishly, I hope we keep making memories.
+More random conversations, more laughing at things
+that probably aren't even funny, more silly moments,
+and more reasons to look back and smile.
+
+I don't know what the next eight years will look
+like. Life changes, people grow, and our routines
+might change too. But I'm genuinely grateful that
+you are a part of my story, and I hope our friendship
+continues to grow in its own beautiful way.
+
+Thank you for being someone I can appreciate,
+someone whose happiness I genuinely care about,
+and someone who has become closer to me than before.
+
+So here's your birthday reminder:
+
+You matter. Your dreams matter. Your happiness matters.
+And there are people who are genuinely rooting for you.
+
+Now stop getting emotional over a website and go
+enjoy your birthday, birthday boy. 😂💛
+
+Happy 23rd birthday, Rushi.
+May this year be kinder, brighter, funnier, and
+filled with beautiful surprises.
+
+Stay the same lovely human, keep that smile,
+and never forget to be a little sunshine yourself. 🌼
+
+Always your friend. 💛</div>
+    </div>
+  </section>
+
+  <section class="photo-section">
+    <p class="eyebrow">A SPACE FOR OUR MEMORIES 📸</p>
+    <h2>One Picture.<br><span class="gold">A Thousand Feelings.</span></h2>
+
+    <p class="section-copy muted">
+      Add a favourite photo of us here.
+      Obviously, only the best picture of my Yellow Person
+      deserves this spot. 😌💛
+    </p>
+
+    <div class="photo-frame" id="photoFrame">
+      <div class="photo-placeholder" id="photoPlaceholder">
+        <div class="icon">📷</div>
+        <p>
+          Our favourite memory goes here.<br>
+          Choose a picture below to preview it.
+        </p>
+      </div>
+      <img id="ourPhoto" class="hidden" alt="A favourite memory">
+    </div>
+
+    <div class="photo-controls">
+      <input type="file" accept="image/*" onchange="loadPhoto(event)">
+    </div>
+
+    <p class="muted" style="font-size:10px;margin-top:15px">
+      Pick a photo from your device.
+    </p>
+  </section>
+
+  <section class="final">
+    <p class="eyebrow">ONE LAST THING, BIRTHDAY BOY</p>
+
+    <h2>Make A Wish,<br><span class="gold">Yellow Person. 🌼</span></h2>
+
+    <p class="section-copy muted">
+      Close your eyes, make your wish, and smile.
+      You deserve so many lovely things in this life.
+    </p>
+
+    <button class="btn" onclick="finalSurprise()">
+      One Last Surprise! 🎉
+    </button>
+
+    <div id="finalMessage" class="final-message hidden">
+      <h2 style="font-size:32px">
+        Stay golden,<br>
+        <span class="gold">Rushi. 💛</span>
+      </h2>
+
+      <p class="muted" style="margin-top:20px">
+        Almost 8 years of knowing you.<br>
+        A little closer with every passing day.<br>
+        And so many memories still waiting for us. 🫶🏻
+      </p>
+
+      <p style="font-size:28px;margin-top:25px">
+        🌼 🎂 💛 🎉 🧸
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Made with love, laughter, and a little extra yellow. 💛<br>
+  A tiny birthday gift for Rushi, from someone who cares.
+</footer>
+
+<script>
+function openSurprise() {
+  document.getElementById('surprise').classList.remove('hidden');
+
+  document.getElementById('surprise')
+    .scrollIntoView({ behavior: 'smooth' });
+
+  celebrateHearts(15);
+}
+
+function toggleLetter() {
+  const letter = document.getElementById('letter');
+  const btn = document.getElementById('letterBtn');
+
+  letter.classList.toggle('show');
+
+  btn.textContent = letter.classList.contains('show')
+    ? 'Close Your Letter 💌'
+    : 'Open Your Letter 💛';
+
+  if (letter.classList.contains('show')) {
+    setTimeout(() => {
+      letter.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }, 100);
+  }
+}
+
+function loadPhoto(event) {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    alert('Please select an image file.');
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    const img = document.getElementById('ourPhoto');
+    img.src = e.target.result;
+    img.classList.remove('hidden');
+
+    document.getElementById('photoPlaceholder')
+      .classList.add('hidden');
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+
+  const choices = ['💛', '💖', '🌼', '✨', '🎉', '🫶🏻', '⭐'];
+  heart.textContent = choices[
+    Math.floor(Math.random() * choices.length)
+  ];
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (16 + Math.random() * 20) + 'px';
+  heart.style.animationDuration = (3.5 + Math.random() * 2) + 's';
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+function celebrateHearts(count = 30) {
+  for (let i = 0; i < count; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+}
+
+function finalSurprise() {
+  document.getElementById('finalMessage')
+    .classList.remove('hidden');
+
+  celebrateHearts(45);
+
+  document.getElementById('finalMessage')
+    .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Countdown to 31 October 2026, using the visitor's local time.
+function updateCountdown() {
+  const now = new Date();
+  let target = new Date(now.getFullYear(), 9, 31, 0, 0, 0);
+
+  // After the birthday starts, count down to next year's birthday.
+  if (now >= target) {
+    target = new Date(now.getFullYear() + 1, 9, 31, 0, 0, 0);
+  }
+
+  const diff = target.getTime() - now.getTime();
+
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+
+  document.getElementById('days').textContent =
+    String(d).padStart(2, '0');
+  document.getElementById('hours').textContent =
+    String(h).padStart(2, '0');
+  document.getElementById('mins').textContent =
+    String(m).padStart(2, '0');
+  document.getElementById('secs').textContent =
+    String(s).padStart(2, '0');
+
+  const isBirthday =
+    now.getMonth() === 9 && now.getDate() === 31;
+
+  document.getElementById('countMessage').textContent =
+    isBirthday
+      ? "IT'S YOUR BIRTHDAY, RUSHI! TODAY IS ALL ABOUT YOU! 💛"
+      : "Counting down until we celebrate YOU. 🌼";
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
+
